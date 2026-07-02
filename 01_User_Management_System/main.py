@@ -9,6 +9,7 @@ Description:
 First Python project for learning functions,
 dictionaries and user management.
 """
+import json
 
 #lista
 usuarios = []
@@ -21,6 +22,20 @@ def crear_usuario(nombre, edad):
         "activo": True
     }
     return usuario
+
+#Función para json
+def guardar_usuarios():
+    with open("01_User_Management_System/datos.json", "w") as archivo:
+        json.dump(usuarios, archivo, indent=4)
+
+def cargar_usuarios():
+    try:
+        with open("01_User_Management_System/datos.json", "r") as archivo:
+            return json.load(archivo)
+    except:
+        return []
+
+usuarios = cargar_usuarios()
     
 programa_activo = True
 while programa_activo:
@@ -45,6 +60,7 @@ while programa_activo:
 
         usuario = crear_usuario(nombre, edad)
         usuarios.append(usuario)
+        guardar_usuarios()
     
     elif opcion == "2":
         if len(usuarios) == 0:
@@ -79,6 +95,7 @@ while programa_activo:
             if usuario["nombre"] == eliminar:
                 encontrado = True
                 usuarios.remove(usuario)
+                guardar_usuarios()
                 print("Usuario eliminado correctamente.")
                 break
         if not encontrado:

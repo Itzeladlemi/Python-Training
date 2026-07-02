@@ -1,0 +1,37 @@
+[
+    {
+        "nombre": "Itzel",
+        "edad": 27,
+        "activo": true
+    },
+    {
+        "nombre": "Alexis",
+        "edad": 22,
+        "activo": true
+    },
+    {
+        "nombre": "Ramon",
+        "edad": 22,
+        "activo": true
+    },
+    {
+        "nombre": "Raul",
+        "edad": 62,
+        "activo": true
+    },
+    {
+        "nombre": "Samantha",
+        "edad": 24,
+        "activo": true
+    },
+    {
+        "nombre": "Isabelle",
+        "edad": 24,
+        "activo": true
+    },
+    {
+        "nombre": "Gael",
+        "edad": 24,
+        "activo": true
+    }
+]
