@@ -22,23 +22,27 @@ def crear_usuario(nombre, edad):
     }
     return usuario
     
-nombre = input("Ingrese su nombre: ")
-edad = input("Ingrese su edad: ")
-
-usuario = crear_usuario(nombre, int(edad))
-
-usuarios.append(usuario)
-
-respuesta = input("¿Desea agregar otro usuario? (s/n): ")
-while respuesta == "s":
-    nombre = input("Ingrese su nombre: ")
-    edad = input("Ingrese su edad: ")
-    usuario = crear_usuario(nombre, int(edad))
-    usuarios.append(usuario)
-    respuesta = input("¿Desea agregar otro usuario? (s/n): ")
+programa_activo = True
+while programa_activo:
+    print("--Menu--")
+    print("1. Agregar usuario")
+    print("2. Mostrar usuarios")
+    print("3. Salir")
+    opcion = input("Seleccione opcion: ")
     
-for usuario in usuarios:
-    print("--USUARIO--")
-    print("Nombre:", usuario["nombre"])
-    print("Edad:", usuario["edad"])
-    print("Activo:", usuario["activo"])
+    if opcion == "1":
+        nombre = input("Ingrese su nombre: ")
+        edad = input("Ingrese su edad: ")
+        usuario = crear_usuario(nombre, int(edad))
+        usuarios.append(usuario)
+    elif opcion == "2":
+        if len(usuarios) == 0:
+            print("No hay usuarios registrados")
+        else:
+            for usuario in usuarios:
+                print("--USUARIO--")
+                print("Nombre:", usuario["nombre"])
+                print("Edad:", usuario["edad"])
+                print("Activo:", usuario["activo"])
+    elif opcion == "3":
+        programa_activo = False
