@@ -34,8 +34,16 @@ while programa_activo:
     
     if opcion == "1":
         nombre = input("Ingrese su nombre: ")
-        edad = input("Ingrese su edad: ")
-        usuario = crear_usuario(nombre, int(edad))
+        edad_valida = False
+        while not edad_valida:
+            edad = input("Ingrese su edad: ")
+            try:
+                edad = int(edad)
+                edad_valida = True
+            except:
+                print("Edad inválida. Ingrese la edad en números.")
+
+        usuario = crear_usuario(nombre, edad)
         usuarios.append(usuario)
     
     elif opcion == "2":
