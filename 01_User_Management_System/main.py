@@ -28,7 +28,8 @@ while programa_activo:
     print("1. Agregar usuario")
     print("2. Mostrar usuarios")
     print("3. Buscar usuario")
-    print("4. Salir")
+    print("4. Eliminar usuario")
+    print("5. Salir")
     opcion = input("Seleccione opcion: ")
     
     if opcion == "1":
@@ -64,4 +65,16 @@ while programa_activo:
             print("Usuario no encontrado.")
 
     elif opcion == "4":
+        eliminar = input("Ingrese el nombre del usuario a eliminar: ")
+        encontrado = False
+        for usuario in usuarios:
+            if usuario["nombre"] == eliminar:
+                encontrado = True
+                usuarios.remove(usuario)
+                print("Usuario eliminado correctamente.")
+                break
+        if not encontrado:
+             print("Usuario no encontrado.")
+
+    elif opcion == "5":
         programa_activo = False
