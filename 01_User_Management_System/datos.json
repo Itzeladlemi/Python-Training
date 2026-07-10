@@ -33,5 +33,10 @@
         "nombre": "Gael",
         "edad": 24,
         "activo": true
+    },
+    {
+        "nombre": "Giovani",
+        "edad": 22,
+        "activo": true
     }
 ]
